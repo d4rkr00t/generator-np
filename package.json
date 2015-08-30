@@ -1,6 +1,6 @@
 {
   "name": "generator-np",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generator for npm module",
   "keywords": [
     "npm",
@@ -9,7 +9,7 @@
     "bootstrap"
   ],
   "license": "MIT",
-  "repository": "d4rkr00t/rander",
+  "repository": "d4rkr00t/generator-np",
   "scripts": {
     "audit": "nsp package",
     "babel-node": "babel-node",

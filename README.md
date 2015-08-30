@@ -2,8 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/generator-np.svg)](https://www.npmjs.com/package/generator-np)
 [![license](https://img.shields.io/npm/l/generator-np.svg)](http://opensource.org/licenses/MIT)
-[![github-issues](https://img.shields.io/github/issues/d4rkr00t/rander.svg)](https://github.com/d4rkr00t/generator-np/issues)
-[![travis-status](https://img.shields.io/travis/d4rkr00t/rander.svg)](https://travis-ci.org/d4rkr00t/generator-np)
+[![github-issues](https://img.shields.io/github/issues/d4rkr00t/generator-np.svg)](https://github.com/d4rkr00t/generator-np/issues)
+[![travis-status](https://img.shields.io/travis/d4rkr00t/generator-np.svg)](https://travis-ci.org/d4rkr00t/generator-np)
 [![coveralls](https://img.shields.io/coveralls/d4rkr00t/generator-np.svg)](https://coveralls.io/github/d4rkr00t/generator-np)
 
 Generator for npm module
