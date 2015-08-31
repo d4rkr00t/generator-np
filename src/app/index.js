@@ -1,6 +1,5 @@
 import yeoman from 'yeoman-generator';
 import normalizeUrl from 'normalize-url';
-import humanizeUrl from 'humanize-url';
 import _s from 'underscore.string';
 
 const copyList = [
@@ -79,7 +78,7 @@ function generate(props) {
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _s.camelize(props.moduleName),
-    humanizedWebsite: humanizeUrl(props.website),
+    website: props.website,
 
     githubUsername: props.githubUsername,
     name: this.user.git.name(),

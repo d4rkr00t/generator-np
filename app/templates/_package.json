@@ -30,7 +30,7 @@
   "author": {
     "name": "<%= name %>",
     "email": "<%= email %>",
-    "url": "<%= humanizedWebsite %>"
+    "url": "<%= website %>"
   },
   "pre-commit": [
     "lint"

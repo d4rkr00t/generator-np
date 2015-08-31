@@ -10,10 +10,6 @@ var _normalizeUrl = require('normalize-url');
 
 var _normalizeUrl2 = _interopRequireDefault(_normalizeUrl);
 
-var _humanizeUrl = require('humanize-url');
-
-var _humanizeUrl2 = _interopRequireDefault(_humanizeUrl);
-
 var _underscoreString = require('underscore.string');
 
 var _underscoreString2 = _interopRequireDefault(_underscoreString);
@@ -80,7 +76,7 @@ function generate(props) {
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _underscoreString2['default'].camelize(props.moduleName),
-    humanizedWebsite: _humanizeUrl2['default'](props.website),
+    website: props.website,
 
     githubUsername: props.githubUsername,
     name: this.user.git.name(),
