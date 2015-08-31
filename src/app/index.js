@@ -18,16 +18,6 @@ const tplList = [
   { from: 'README.md', to: '.README.md' }
 ];
 
-function getGithubUsername(user) {
-  return new Promise((resolve, reject) => {
-    user.github.username((err, githubUsername) => {
-      if (err) reject(err);
-
-      resolve(githubUsername);
-    });
-  });
-}
-
 function userInteraction(githubUsername) {
   return new Promise(resolve => {
     this.prompt([
@@ -50,7 +40,6 @@ function userInteraction(githubUsername) {
         name: 'githubUsername',
         message: 'What is your GitHub username?',
         store: true,
-        default: githubUsername,
         required: true
       },
       {
@@ -88,7 +77,7 @@ function generate(props) {
   };
 
   if (props.cli) {
-    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('src/cli.js'), tpl);
+    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('cli.js'), tpl);
   }
 
   copyList.map(item => this.fs.copy(this.templatePath(item.from), this.destinationPath(item.to)));
@@ -103,14 +92,15 @@ module.exports = yeoman.generators.Base.extend({
   init() {
     const cb = this.async();
 
-    getGithubUsername(this.user)
-      .then(userInteraction.bind(this))
+    userInteraction.bind(this)()
       .then(generate.bind(this))
       .then(cb)
       .catch(err => console.error(err)); // eslint-disable-line
   },
 
   install() {
+    if (this.options.skipInstall) return;
+
     this.npmInstall();
     this.spawnCommand('git', ['init']);
   }

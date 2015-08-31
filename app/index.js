@@ -18,16 +18,6 @@ var copyList = [{ from: 'babelrc', to: '.babelrc' }, { from: 'editorconfig', to:
 
 var tplList = [{ from: '_package.json', to: 'package.json' }, { from: 'README.md', to: '.README.md' }];
 
-function getGithubUsername(user) {
-  return new Promise(function (resolve, reject) {
-    user.github.username(function (err, githubUsername) {
-      if (err) reject(err);
-
-      resolve(githubUsername);
-    });
-  });
-}
-
 function userInteraction(githubUsername) {
   var _this = this;
 
@@ -49,7 +39,6 @@ function userInteraction(githubUsername) {
       name: 'githubUsername',
       message: 'What is your GitHub username?',
       store: true,
-      'default': githubUsername,
       required: true
     }, {
       name: 'website',
@@ -86,7 +75,7 @@ function generate(props) {
   };
 
   if (props.cli) {
-    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('src/cli.js'), tpl);
+    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('cli.js'), tpl);
   }
 
   copyList.map(function (item) {
@@ -105,12 +94,14 @@ module.exports = _yeomanGenerator2['default'].generators.Base.extend({
   init: function init() {
     var cb = this.async();
 
-    getGithubUsername(this.user).then(userInteraction.bind(this)).then(generate.bind(this)).then(cb)['catch'](function (err) {
+    userInteraction.bind(this)().then(generate.bind(this)).then(cb)['catch'](function (err) {
       return console.error(err);
     }); // eslint-disable-line
   },
 
   install: function install() {
+    if (this.options.skipInstall) return;
+
     this.npmInstall();
     this.spawnCommand('git', ['init']);
   }
