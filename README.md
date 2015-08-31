@@ -10,6 +10,27 @@ Generator for npm module
 
 ![nodei.co](https://nodei.co/npm/generator-np.png?downloads=true&downloadRank=true&stars=true)
 
+## Features
+* Generates npm module structure with babel, isparta and mocha
+* Can generate CLI boilerplate
+* Generates configs for travis and coveralls
+* Adds .babelrc, .editorconfig, .eslintrc, .gitignore, .istanbul.yml, .travis.yml, .README.md - for node-readme module
+* Generates setup for test and coverage with isparta, mocha and chai
+* Generates package.json with some useful scripts like: [nsp check](https://www.npmjs.com/package/nsp), eslint + pre-commit hook, node-readme for README generation.
+
+### Dev dependencies which will be in your package.json after generation:
+* [babel](https://www.npmjs.com/babel)
+* [babel-eslint](https://www.npmjs.com/babel-eslint)
+* [chai](https://www.npmjs.com/chai)
+* [coveralls](https://www.npmjs.com/coveralls)
+* [eslint](https://www.npmjs.com/eslint)
+* [isparta](https://www.npmjs.com/isparta)
+* [mocha](https://www.npmjs.com/mocha)
+* [mocha-lcov-reporter](https://www.npmjs.com/mocha-lcov-reporter)
+* [node-readme](https://www.npmjs.com/node-readme)
+* [nsp](https://www.npmjs.com/nsp)
+* [pre-commit](https://www.npmjs.com/pre-commit)
+
 ## Install
 
 ```
@@ -29,7 +50,6 @@ yo np
 
 Package | Version | Dev
 --- |:---:|:---:
-[humanize-url](https://www.npmjs.com/package/humanize-url) | ^1.0.1 | ✖
 [normalize-url](https://www.npmjs.com/package/normalize-url) | ^1.3.0 | ✖
 [underscore.string](https://www.npmjs.com/package/underscore.string) | ^3.2.0 | ✖
 [yeoman-generator](https://www.npmjs.com/package/yeoman-generator) | ^0.20.3 | ✖
