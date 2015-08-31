@@ -5,5 +5,3 @@ install:
   - npm install
 script:
   - npm run check
-after_success:
-  - npm run coveralls
