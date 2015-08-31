@@ -22,10 +22,16 @@ npm install -g generator-np
 yo np
 ```
 
+## TODO
+- Tests
+
 ## Dependencies
 
 Package | Version | Dev
 --- |:---:|:---:
+[humanize-url](https://www.npmjs.com/package/humanize-url) | ^1.0.1 | ✖
+[normalize-url](https://www.npmjs.com/package/normalize-url) | ^1.3.0 | ✖
+[underscore.string](https://www.npmjs.com/package/underscore.string) | ^3.2.0 | ✖
 [yeoman-generator](https://www.npmjs.com/package/yeoman-generator) | ^0.20.3 | ✖
 [babel](https://www.npmjs.com/package/babel) | ^5.8.23 | ✔
 [babel-eslint](https://www.npmjs.com/package/babel-eslint) | ^4.1.0 | ✔
