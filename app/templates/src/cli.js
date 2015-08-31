@@ -2,7 +2,7 @@
 
 import meow from 'meow';
 import chalk from 'chalk';
-import <%= camelModuleName %> from '../lib/';
+import <%= camelModuleName %> from './lib/';
 
 const cli = meow({
   pkg: '../package.json',

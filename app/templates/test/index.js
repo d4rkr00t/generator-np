@@ -1,1 +1,5 @@
-"use strict";
+import <%= camelModuleName %> from '../lib/';
+
+describe('<%= camelModuleName %>', () => {
+
+});

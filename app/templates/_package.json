@@ -2,7 +2,7 @@
   "name": "<%= moduleName %>",
   "version": "0.0.0",
   "description": "<%= moduleDescription %>",
-  ,<% if (cli) { %>
+  <% if (cli) { %>
   "bin": "cli.js",<% } %>
   "main": "lib/index.js",
   "keywords": [
