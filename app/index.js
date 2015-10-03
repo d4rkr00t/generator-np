@@ -18,7 +18,7 @@ var copyList = [{ from: 'babelrc', to: '.babelrc' }, { from: 'editorconfig', to:
 
 var tplList = [{ from: '_package.json', to: 'package.json' }, { from: 'README.md', to: '.README.md' }];
 
-function userInteraction(githubUsername) {
+function userInteraction() {
   var _this = this;
 
   return new Promise(function (resolve) {
@@ -42,12 +42,10 @@ function userInteraction(githubUsername) {
       required: true
     }, {
       name: 'website',
-      message: 'What is the URL of your website?',
+      message: 'What is the URL of your website? (default: https://github.com/{github-user-name})',
       store: true,
-      'default': 'https://github.com/' + githubUsername,
-      required: true,
       filter: function filter(val) {
-        return _normalizeUrl2['default'](val);
+        return val ? _normalizeUrl2['default'](val) : '';
       }
     }, {
       name: 'cli',
@@ -65,7 +63,7 @@ function generate(props) {
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _underscoreString2['default'].camelize(props.moduleName),
-    website: props.website,
+    website: props.website ? props.website : 'https://github.com/' + props.website,
 
     githubUsername: props.githubUsername,
     name: this.user.git.name(),

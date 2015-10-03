@@ -3,13 +3,14 @@ import yeomanGenerator from 'yeoman-generator';
 import assert from 'yeoman-assert';
 
 const helpers = yeomanGenerator.test;
+const tempDir = path.join(__dirname, 'temp');
 
 describe('generator', () => {
   let generator;
   beforeEach(done => {
     const deps = ['../../app'];
 
-    helpers.testDirectory(path.join(__dirname, 'temp'), err => {
+    helpers.testDirectory(tempDir, err => {
       if (err) {
         done(err);
         return;
@@ -40,7 +41,7 @@ describe('generator', () => {
 
     helpers.mockPrompt(generator, {
       moduleName: 'test',
-      moduleDescription: 'My awsome module description',
+      moduleDescription: 'My awesome module description',
       githubUsername: 'test',
       website: 'test.com',
       cli: false
@@ -56,7 +57,7 @@ describe('generator', () => {
   it('CLI option', done => {
     helpers.mockPrompt(generator, {
       moduleName: 'test',
-      moduleDescription: 'My awsome module description',
+      moduleDescription: 'My awesome module description',
       githubUsername: 'test',
       website: 'test.com',
       cli: true

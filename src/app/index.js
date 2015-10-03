@@ -18,7 +18,7 @@ const tplList = [
   { from: 'README.md', to: '.README.md' }
 ];
 
-function userInteraction(githubUsername) {
+function userInteraction() {
   return new Promise(resolve => {
     this.prompt([
       {
@@ -44,12 +44,10 @@ function userInteraction(githubUsername) {
       },
       {
         name: 'website',
-        message: 'What is the URL of your website?',
+        message: 'What is the URL of your website? (default: https://github.com/{github-user-name})',
         store: true,
-        default: `https://github.com/${githubUsername}`,
-        required: true,
         filter(val) {
-          return normalizeUrl(val);
+          return val ? normalizeUrl(val) : '';
         }
       },
       {
@@ -67,7 +65,7 @@ function generate(props) {
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _s.camelize(props.moduleName),
-    website: props.website,
+    website: props.website ? props.website : `https://github.com/${props.website}`,
 
     githubUsername: props.githubUsername,
     name: this.user.git.name(),
