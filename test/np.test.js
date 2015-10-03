@@ -64,7 +64,7 @@ describe('generator', () => {
     });
 
     generator.run(() => {
-      assert.file('cli.js');
+      assert.file('src/cli.js');
       assert.fileContent('package.json', /"bin":/);
       assert.fileContent('package.json', /"bin": "cli.js"/);
       assert.fileContent('package.json', /"meow"/);

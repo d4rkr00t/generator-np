@@ -44,7 +44,7 @@ function userInteraction() {
       },
       {
         name: 'website',
-        message: 'What is the URL of your website? (default: https://github.com/{github-user-name})',
+        message: 'What is the URL of your website? [default: https://github.com/{github-user-name}]',
         store: true,
         filter(val) {
           return val ? normalizeUrl(val) : '';
@@ -75,7 +75,7 @@ function generate(props) {
   };
 
   if (props.cli) {
-    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('cli.js'), tpl);
+    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('src/cli.js'), tpl);
   }
 
   copyList.map(item => this.fs.copy(this.templatePath(item.from), this.destinationPath(item.to)));

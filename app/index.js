@@ -42,7 +42,7 @@ function userInteraction() {
       required: true
     }, {
       name: 'website',
-      message: 'What is the URL of your website? (default: https://github.com/{github-user-name})',
+      message: 'What is the URL of your website? [default: https://github.com/{github-user-name}]',
       store: true,
       filter: function filter(val) {
         return val ? _normalizeUrl2['default'](val) : '';
@@ -73,7 +73,7 @@ function generate(props) {
   };
 
   if (props.cli) {
-    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('cli.js'), tpl);
+    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('src/cli.js'), tpl);
   }
 
   copyList.map(function (item) {
