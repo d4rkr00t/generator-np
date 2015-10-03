@@ -65,7 +65,7 @@ function generate(props) {
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _s.camelize(props.moduleName),
-    website: props.website ? props.website : `https://github.com/${props.website}`,
+    website: props.website ? props.website : `https://github.com/${props.githubUsername}`,
 
     githubUsername: props.githubUsername,
     name: this.user.git.name(),
