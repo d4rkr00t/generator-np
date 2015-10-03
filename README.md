@@ -46,17 +46,17 @@ yo np
 
 Package | Version | Dev
 --- |:---:|:---:
-[normalize-url](https://www.npmjs.com/package/normalize-url) | ^1.3.0 | ✖
-[underscore.string](https://www.npmjs.com/package/underscore.string) | ^3.2.0 | ✖
+[normalize-url](https://www.npmjs.com/package/normalize-url) | ^1.3.1 | ✖
+[underscore.string](https://www.npmjs.com/package/underscore.string) | ^3.2.2 | ✖
 [yeoman-generator](https://www.npmjs.com/package/yeoman-generator) | ^0.20.3 | ✖
 [babel](https://www.npmjs.com/package/babel) | ^5.8.23 | ✔
-[babel-eslint](https://www.npmjs.com/package/babel-eslint) | ^4.1.0 | ✔
-[eslint](https://www.npmjs.com/package/eslint) | ^1.3.1 | ✔
-[mocha](https://www.npmjs.com/package/mocha) | ^2.2.5 | ✔
+[babel-eslint](https://www.npmjs.com/package/babel-eslint) | ^4.1.3 | ✔
+[eslint](https://www.npmjs.com/package/eslint) | ^1.6.0 | ✔
+[mocha](https://www.npmjs.com/package/mocha) | ^2.3.3 | ✔
 [node-readme](https://www.npmjs.com/package/node-readme) | ^0.1.8 | ✔
 [nsp](https://www.npmjs.com/package/nsp) | ^1.1.0 | ✔
 [pre-commit](https://www.npmjs.com/package/pre-commit) | ^1.1.1 | ✔
-[yeoman-assert](https://www.npmjs.com/package/yeoman-assert) | ^2.0.0 | ✔
+[yeoman-assert](https://www.npmjs.com/package/yeoman-assert) | ^2.1.0 | ✔
 
 
 ## Author
