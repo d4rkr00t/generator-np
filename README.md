@@ -42,9 +42,6 @@ npm install -g generator-np
 yo np
 ```
 
-## TODO
-- Tests
-
 ## Dependencies
 
 Package | Version | Dev
