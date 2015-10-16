@@ -4,6 +4,7 @@
 [![license](https://img.shields.io/npm/l/generator-np.svg)](http://opensource.org/licenses/MIT)
 [![github-issues](https://img.shields.io/github/issues/d4rkr00t/generator-np.svg)](https://github.com/d4rkr00t/generator-np/issues)
 [![travis-status](https://img.shields.io/travis/d4rkr00t/generator-np.svg)](https://travis-ci.org/d4rkr00t/generator-np)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 Generator for npm module
 
@@ -51,9 +52,10 @@ Package | Version | Dev
 [yeoman-generator](https://www.npmjs.com/package/yeoman-generator) | ^0.20.3 | ✖
 [babel](https://www.npmjs.com/package/babel) | ^5.8.23 | ✔
 [babel-eslint](https://www.npmjs.com/package/babel-eslint) | ^4.1.3 | ✔
-[eslint](https://www.npmjs.com/package/eslint) | ^1.6.0 | ✔
+[cz-conventional-changelog](https://www.npmjs.com/package/cz-conventional-changelog) | ^1.1.4 | ✔
+[eslint](https://www.npmjs.com/package/eslint) | ^1.7.0 | ✔
 [mocha](https://www.npmjs.com/package/mocha) | ^2.3.3 | ✔
-[node-readme](https://www.npmjs.com/package/node-readme) | ^0.1.8 | ✔
+[node-readme](https://www.npmjs.com/package/node-readme) | ^0.1.9 | ✔
 [nsp](https://www.npmjs.com/package/nsp) | ^1.1.0 | ✔
 [pre-commit](https://www.npmjs.com/package/pre-commit) | ^1.1.1 | ✔
 [yeoman-assert](https://www.npmjs.com/package/yeoman-assert) | ^2.1.0 | ✔

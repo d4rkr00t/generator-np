@@ -18,7 +18,6 @@
     "readme": "node ./node_modules/node-readme/bin/node-readme.js",
     "test": "mocha test/*.test.js -r babel/register -r test/setup.js",
     "validate": "npm run lint && npm test",
-
     "prepare": "npm run validate && npm run check && npm run readme && npm run build",
     "pp": "npm run prepare"
   },
@@ -33,9 +32,10 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-eslint": "^4.1.3",
-    "eslint": "^1.6.0",
+    "cz-conventional-changelog": "^1.1.4",
+    "eslint": "^1.7.0",
     "mocha": "^2.3.3",
-    "node-readme": "^0.1.8",
+    "node-readme": "^0.1.9",
     "nsp": "^1.1.0",
     "pre-commit": "^1.1.1",
     "yeoman-assert": "^2.1.0"
@@ -44,5 +44,8 @@
     "normalize-url": "^1.3.1",
     "underscore.string": "^3.2.2",
     "yeoman-generator": "^0.20.3"
+  },
+  "czConfig": {
+    "path": "./node_modules/cz-conventional-changelog"
   }
 }
