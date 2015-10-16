@@ -22,7 +22,6 @@
     "readme": "node ./node_modules/node-readme/bin/node-readme.js",
     "test": "mocha test/*.test.js -r babel/register -r test/setup.js",
     "validate": "npm run lint && npm test",
-
     "prepare": "npm run validate && npm run check && npm run readme && npm run build",
     "pp": "npm run prepare"
   },
@@ -43,12 +42,16 @@
     "babel-eslint": "^4.0.10",
     "chai": "^3.2.0",
     "coveralls": "^2.11.4",
-    "eslint": "^1.2.1",
+    "cz-conventional-changelog": "^1.1.4",
+    "eslint": "^1.7.0",
     "isparta": "^3.0.3",
     "mocha": "^2.2.5",
     "mocha-lcov-reporter": "0.0.2",
-    "node-readme": "^0.1.8",
+    "node-readme": "^0.1.9",
     "nsp": "^1.1.0",
     "pre-commit": "^1.1.1"
+  },
+  "czConfig": {
+    "path": "./node_modules/cz-conventional-changelog"
   }
 }
