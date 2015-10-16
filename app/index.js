@@ -14,9 +14,9 @@ var _underscoreString = require('underscore.string');
 
 var _underscoreString2 = _interopRequireDefault(_underscoreString);
 
-var copyList = [{ from: 'babelrc', to: '.babelrc' }, { from: 'editorconfig', to: '.editorconfig' }, { from: 'eslintrc', to: '.eslintrc' }, { from: 'gitignore', to: '.gitignore' }, { from: 'istanbul.yml', to: '.istanbul.yml' }, { from: 'travis.yml', to: '.travis.yml' }, { from: 'src/lib/index.js', to: 'src/lib/index.js' }, { from: 'test/setup.js', to: 'test/setup.js' }];
+var copyList = [{ from: 'babelrc', to: '.babelrc' }, { from: 'editorconfig', to: '.editorconfig' }, { from: 'eslintrc', to: '.eslintrc' }, { from: 'gitignore', to: '.gitignore' }, { from: 'istanbul.yml', to: '.istanbul.yml' }, { from: 'src/lib/index.js', to: 'src/lib/index.js' }, { from: 'test/setup.js', to: 'test/setup.js' }];
 
-var tplList = [{ from: '_package.json', to: 'package.json' }, { from: 'README.md', to: '.README.md' }];
+var tplList = [{ from: 'travis.yml', to: '.travis.yml' }, { from: '_package.json', to: 'package.json' }, { from: 'README.md', to: '.README.md' }];
 
 function userInteraction() {
   var _this = this;
@@ -48,6 +48,24 @@ function userInteraction() {
         return val ? _normalizeUrl2['default'](val) : '';
       }
     }, {
+      name: 'travis',
+      message: 'Do you need a .travis.yml?',
+      type: 'confirm',
+      'default': true
+    }, {
+      name: 'coveralls',
+      message: 'Do you need setup for coveralls?',
+      type: 'confirm',
+      'default': true,
+      when: function when(props) {
+        return props.travis;
+      }
+    }, {
+      name: 'commitizen',
+      message: 'Do you need commitizen setup?',
+      type: 'confirm',
+      'default': true
+    }, {
       name: 'cli',
       message: 'Do you need a CLI?',
       type: 'confirm',
@@ -69,6 +87,10 @@ function generate(props) {
     name: this.user.git.name(),
     email: this.user.git.email(),
 
+    travis: props.travis,
+    coveralls: props.travis && props.coveralls,
+    commitizen: props.commitizen,
+
     cli: props.cli
   };
 
@@ -79,20 +101,29 @@ function generate(props) {
   copyList.map(function (item) {
     return _this2.fs.copy(_this2.templatePath(item.from), _this2.destinationPath(item.to));
   });
-  tplList.map(function (item) {
+
+  tplList.filter(function (item) {
+    return !(!props.travis && item.from === 'travis.yml');
+  }).map(function (item) {
     return _this2.fs.copyTpl(_this2.templatePath(item.from), _this2.destinationPath(item.to), tpl);
   });
 
   this.fs.copyTpl(this.templatePath('test/index.js'), this.destinationPath('test/' + props.moduleName + '.test.js'), tpl);
 
-  return Promise.resolve();
+  return Promise.resolve(props);
 }
 
 module.exports = _yeomanGenerator2['default'].generators.Base.extend({
   init: function init() {
+    var _this3 = this;
+
     var cb = this.async();
 
-    userInteraction.bind(this)().then(generate.bind(this)).then(cb)['catch'](function (err) {
+    userInteraction.bind(this)().then(generate.bind(this)).then(function (props) {
+      return _this3.props = props;
+    }).then(function () {
+      return cb();
+    })['catch'](function (err) {
       return console.error(err);
     }); // eslint-disable-line
   },

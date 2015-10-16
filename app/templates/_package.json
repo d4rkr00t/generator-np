@@ -16,8 +16,8 @@
     "audit": "nsp package",
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
-    "cov": "babel-node ./node_modules/.bin/isparta cover --report lcovonly --report html _mocha -- test/*.test.js -r test/setup.js",
-    "coveralls": "npm run cov && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "cov": "babel-node ./node_modules/.bin/isparta cover --report lcovonly --report html _mocha -- test/*.test.js -r test/setup.js",<% if (coveralls) { %>
+    "coveralls": "npm run cov && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",<% } %>
     "lint": "eslint src test",
     "readme": "node ./node_modules/node-readme/bin/node-readme.js",
     "test": "mocha test/*.test.js -r babel/register -r test/setup.js",
@@ -40,9 +40,9 @@
   "devDependencies": {
     "babel": "^5.8.21",
     "babel-eslint": "^4.0.10",
-    "chai": "^3.2.0",
-    "coveralls": "^2.11.4",
-    "cz-conventional-changelog": "^1.1.4",
+    "chai": "^3.2.0",<% if (coveralls) { %>
+    "coveralls": "^2.11.4",<% } %><% if (commitizen) { %>
+    "cz-conventional-changelog": "^1.1.4",<% } %>
     "eslint": "^1.7.0",
     "isparta": "^3.0.3",
     "mocha": "^2.2.5",
@@ -50,8 +50,8 @@
     "node-readme": "^0.1.9",
     "nsp": "^1.1.0",
     "pre-commit": "^1.1.1"
-  },
+  }<% if (commitizen) { %>,
   "czConfig": {
     "path": "./node_modules/cz-conventional-changelog"
-  }
+  }<% } %>
 }
