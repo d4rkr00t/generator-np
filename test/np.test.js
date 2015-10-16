@@ -54,7 +54,57 @@ describe('generator', () => {
     });
   });
 
-  it('CLI option', done => {
+  it('No travis', done => {
+    helpers.mockPrompt(generator, {
+      moduleName: 'test',
+      moduleDescription: 'My awesome module description',
+      githubUsername: 'test',
+      website: 'test.com',
+      travis: false
+    });
+
+    generator.run(() => {
+      assert.noFile('.travis.yml');
+      assert.noFileContent('package.json', /coveralls/);
+      assert.noFileContent('.README.md', /coveralls/);
+      done();
+    });
+  });
+
+  it('Travis + no coveralls', done => {
+    helpers.mockPrompt(generator, {
+      moduleName: 'test',
+      moduleDescription: 'My awesome module description',
+      githubUsername: 'test',
+      website: 'test.com',
+      travis: true,
+      coveralls: false
+    });
+
+    generator.run(() => {
+      assert.noFileContent('package.json', /coveralls/);
+      assert.noFileContent('.README.md', /coveralls/);
+      assert.noFileContent('.travis.yml', /coveralls/);
+      done();
+    });
+  });
+
+  it('No commitizen', done => {
+    helpers.mockPrompt(generator, {
+      moduleName: 'test',
+      moduleDescription: 'My awesome module description',
+      githubUsername: 'test',
+      commitizen: false
+    });
+
+    generator.run(() => {
+      assert.noFileContent('package.json', /cz-conventional-changelog/);
+      assert.noFileContent('.README.md', /Commitizen friendly/);
+      done();
+    });
+  });
+
+  it('CLI', done => {
     helpers.mockPrompt(generator, {
       moduleName: 'test',
       moduleDescription: 'My awesome module description',
