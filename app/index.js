@@ -14,122 +14,42 @@ var _underscoreString = require('underscore.string');
 
 var _underscoreString2 = _interopRequireDefault(_underscoreString);
 
+var _filesConfig = require('./files-config');
+
+var _filesConfig2 = _interopRequireDefault(_filesConfig);
+
+var _libUserInteraction = require('./lib/user-interaction');
+
+var _libUserInteraction2 = _interopRequireDefault(_libUserInteraction);
+
+var _libGenerate = require('./lib/generate');
+
+var _libGenerate2 = _interopRequireDefault(_libGenerate);
+
 var _libMessage = require('./lib/message');
 
 var _libMessage2 = _interopRequireDefault(_libMessage);
 
-var copyList = [{ from: 'babelrc', to: '.babelrc' }, { from: 'editorconfig', to: '.editorconfig' }, { from: 'eslintrc', to: '.eslintrc' }, { from: 'gitignore', to: '.gitignore' }, { from: 'istanbul.yml', to: '.istanbul.yml' }, { from: 'src/lib/index.js', to: 'src/lib/index.js' }, { from: 'test/setup.js', to: 'test/setup.js' }];
-
-var tplList = [{ from: 'travis.yml', to: '.travis.yml' }, { from: '_package.json', to: 'package.json' }, { from: 'README.md', to: '.README.md' }];
-
-function userInteraction() {
-  var _this = this;
-
-  return new Promise(function (resolve) {
-    _this.prompt([{
-      name: 'moduleName',
-      message: 'What do you want to name your module?',
-      'default': _this.appname.replace(/\s/g, '-'),
-      required: true,
-      filter: function filter(val) {
-        return _underscoreString2['default'].slugify(val);
-      }
-    }, {
-      name: 'moduleDescription',
-      message: 'What is description for your module?',
-      'default': 'My awesome module',
-      required: true
-    }, {
-      name: 'githubUsername',
-      message: 'What is your GitHub username?',
-      store: true,
-      required: true
-    }, {
-      name: 'website',
-      message: 'What is the URL of your website? [default: https://github.com/{github-user-name}]',
-      store: true,
-      filter: function filter(val) {
-        return val ? _normalizeUrl2['default'](val) : '';
-      }
-    }, {
-      name: 'travis',
-      message: 'Do you need a .travis.yml?',
-      type: 'confirm',
-      'default': true
-    }, {
-      name: 'coveralls',
-      message: 'Do you need setup for coveralls?',
-      type: 'confirm',
-      'default': true,
-      when: function when(props) {
-        return props.travis;
-      }
-    }, {
-      name: 'commitizen',
-      message: 'Do you need commitizen setup?',
-      type: 'confirm',
-      'default': true
-    }, {
-      name: 'cli',
-      message: 'Do you need a CLI?',
-      type: 'confirm',
-      'default': false
-    }], resolve);
-  });
-}
-
-function generate(props) {
-  var _this2 = this;
-
-  var tpl = {
-    moduleName: props.moduleName,
-    moduleDescription: props.moduleDescription,
-    camelModuleName: _underscoreString2['default'].camelize(props.moduleName),
-    website: props.website ? props.website : 'https://github.com/' + props.githubUsername,
-
-    githubUsername: props.githubUsername,
-    name: this.user.git.name(),
-    email: this.user.git.email(),
-
-    travis: props.travis,
-    coveralls: props.travis && props.coveralls,
-    commitizen: props.commitizen,
-
-    cli: props.cli
-  };
-
-  if (props.cli) {
-    this.fs.copyTpl(this.templatePath('src/cli.js'), this.destinationPath('src/cli.js'), tpl);
-  }
-
-  copyList.map(function (item) {
-    return _this2.fs.copy(_this2.templatePath(item.from), _this2.destinationPath(item.to));
-  });
-
-  tplList.filter(function (item) {
-    return !(!props.travis && item.from === 'travis.yml');
-  }).map(function (item) {
-    return _this2.fs.copyTpl(_this2.templatePath(item.from), _this2.destinationPath(item.to), tpl);
-  });
-
-  this.fs.copyTpl(this.templatePath('test/index.js'), this.destinationPath('test/' + props.moduleName + '.test.js'), tpl);
-
-  return Promise.resolve(props);
-}
-
 module.exports = _yeomanGenerator2['default'].generators.Base.extend({
   init: function init() {
-    var _this3 = this;
+    var _this = this;
 
     var cb = this.async();
 
-    userInteraction.bind(this)().then(generate.bind(this)).then(function (props) {
-      return _this3.props = props;
+    var prompt = this.prompt.bind(this);
+    var templatePath = this.templatePath.bind(this);
+    var destinationPath = this.destinationPath.bind(this);
+    var appname = this.appname;
+    var user = this.user;
+    var fs = this.fs;
+
+    _libUserInteraction2['default']({ prompt: prompt, appname: appname, normalizeUrl: _normalizeUrl2['default'], _s: _underscoreString2['default'] }).then(function (props) {
+      return _libGenerate2['default'](_filesConfig2['default'], props, { _s: _underscoreString2['default'], user: user, fs: fs, templatePath: templatePath, destinationPath: destinationPath });
+    }).then(function (props) {
+      return _this.props = props;
     }).then(function () {
       return cb();
-    })['catch'](function (err) {
-      return console.error(err);
-    }); // eslint-disable-line
+    })['catch'](console.error.bind(console)); // eslint-disable-line
   },
 
   install: function install() {
