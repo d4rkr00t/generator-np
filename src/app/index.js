@@ -2,6 +2,8 @@ import yeoman from 'yeoman-generator';
 import normalizeUrl from 'normalize-url';
 import _s from 'underscore.string';
 
+import message from './lib/message';
+
 const copyList = [
   { from: 'babelrc', to: '.babelrc' },
   { from: 'editorconfig', to: '.editorconfig' },
@@ -126,5 +128,11 @@ module.exports = yeoman.generators.Base.extend({
 
     this.npmInstall();
     this.spawnCommand('git', ['init']);
+  },
+
+  end() {
+    if (!this.props) return;
+
+    message(this.log.bind(this), this.props);
   }
 });

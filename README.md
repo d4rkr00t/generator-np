@@ -47,6 +47,7 @@ yo np
 
 Package | Version | Dev
 --- |:---:|:---:
+[chalk](https://www.npmjs.com/package/chalk) | ^1.1.1 | ✖
 [normalize-url](https://www.npmjs.com/package/normalize-url) | ^1.3.1 | ✖
 [underscore.string](https://www.npmjs.com/package/underscore.string) | ^3.2.2 | ✖
 [yeoman-generator](https://www.npmjs.com/package/yeoman-generator) | ^0.20.3 | ✖

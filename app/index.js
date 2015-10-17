@@ -14,6 +14,10 @@ var _underscoreString = require('underscore.string');
 
 var _underscoreString2 = _interopRequireDefault(_underscoreString);
 
+var _libMessage = require('./lib/message');
+
+var _libMessage2 = _interopRequireDefault(_libMessage);
+
 var copyList = [{ from: 'babelrc', to: '.babelrc' }, { from: 'editorconfig', to: '.editorconfig' }, { from: 'eslintrc', to: '.eslintrc' }, { from: 'gitignore', to: '.gitignore' }, { from: 'istanbul.yml', to: '.istanbul.yml' }, { from: 'src/lib/index.js', to: 'src/lib/index.js' }, { from: 'test/setup.js', to: 'test/setup.js' }];
 
 var tplList = [{ from: 'travis.yml', to: '.travis.yml' }, { from: '_package.json', to: 'package.json' }, { from: 'README.md', to: '.README.md' }];
@@ -133,5 +137,11 @@ module.exports = _yeomanGenerator2['default'].generators.Base.extend({
 
     this.npmInstall();
     this.spawnCommand('git', ['init']);
+  },
+
+  end: function end() {
+    if (!this.props) return;
+
+    _libMessage2['default'](this.log.bind(this), this.props);
   }
 });
