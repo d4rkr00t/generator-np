@@ -11,25 +11,13 @@ Generator for npm module
 ![nodei.co](https://nodei.co/npm/generator-np.png?downloads=true&downloadRank=true&stars=true)
 
 ## Features
-* Generates npm module structure with babel, isparta and mocha
-* Can generate CLI boilerplate
-* Generates configs for travis and coveralls
-* Adds .babelrc, .editorconfig, .eslintrc, .gitignore, .istanbul.yml, .travis.yml, .README.md - for node-readme module
-* Generates setup for test and coverage with isparta, mocha and chai
-* Generates package.json with some useful scripts like: [nsp check](https://www.npmjs.com/package/nsp), eslint + pre-commit hook, node-readme for README generation.
+* Generate npm module structure with babel, isparta and mocha;
+* Generate package.json with some useful scripts like: [nsp check](https://www.npmjs.com/package/nsp), eslint + pre-commit hook and node-readme for generating README;
+* [Optional] generate CLI boilerplate;
+* [Optional] generate configs for travis and coveralls;
+* [Optional] setup module to use commitizen and cz-conventional-changelog.
 
-### Dev dependencies which will be in your package.json after generation:
-* [babel](https://www.npmjs.com/babel)
-* [babel-eslint](https://www.npmjs.com/babel-eslint)
-* [chai](https://www.npmjs.com/chai)
-* [coveralls](https://www.npmjs.com/coveralls)
-* [eslint](https://www.npmjs.com/eslint)
-* [isparta](https://www.npmjs.com/isparta)
-* [mocha](https://www.npmjs.com/mocha)
-* [mocha-lcov-reporter](https://www.npmjs.com/mocha-lcov-reporter)
-* [node-readme](https://www.npmjs.com/node-readme)
-* [nsp](https://www.npmjs.com/nsp)
-* [pre-commit](https://www.npmjs.com/pre-commit)
+![generator-np](https://cloud.githubusercontent.com/assets/200119/10646398/8f24a78c-783b-11e5-9755-8f57f28ba187.png)
 
 ## Install
 
