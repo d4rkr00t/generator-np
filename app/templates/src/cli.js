@@ -5,7 +5,6 @@ import chalk from 'chalk';
 import <%= camelModuleName %> from './lib/';
 
 const cli = meow({
-  pkg: '../package.json',
   help: [
     'Usage',
     '  $ <%= moduleName %> [input]',
@@ -20,3 +19,8 @@ const cli = meow({
     '  ponies & rainbows'
   ]
 });
+
+const input = cli.input || [];
+const flags = cli.flags || {};
+
+console.log(cli.help);
