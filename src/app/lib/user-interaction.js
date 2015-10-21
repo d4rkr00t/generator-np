@@ -24,8 +24,9 @@ export default function userInteraction(imports) {
       },
       {
         name: 'website',
-        message: 'What is the URL of your website? [default: https://github.com/{github-user-name}]',
-        store: true,
+        message: 'What is the URL of your website?',
+        store: false,
+        default(props) { return `https://github.com/${props.githubUsername}`; },
         filter(val) { return val ? normalizeUrl(val) : ''; }
       },
       {
@@ -43,7 +44,7 @@ export default function userInteraction(imports) {
       },
       {
         name: 'commitizen',
-        message: 'Do you need commitizen setup?',
+        message: 'Do you need setup for commitizen?',
         type: 'confirm',
         default: true
       },

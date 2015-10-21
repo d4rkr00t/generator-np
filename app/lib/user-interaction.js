@@ -30,8 +30,11 @@ function userInteraction(imports) {
       required: true
     }, {
       name: 'website',
-      message: 'What is the URL of your website? [default: https://github.com/{github-user-name}]',
-      store: true,
+      message: 'What is the URL of your website?',
+      store: false,
+      'default': function _default(props) {
+        return 'https://github.com/' + props.githubUsername;
+      },
       filter: function filter(val) {
         return val ? normalizeUrl(val) : '';
       }
@@ -50,7 +53,7 @@ function userInteraction(imports) {
       }
     }, {
       name: 'commitizen',
-      message: 'Do you need commitizen setup?',
+      message: 'Do you need setup for commitizen?',
       type: 'confirm',
       'default': true
     }, {

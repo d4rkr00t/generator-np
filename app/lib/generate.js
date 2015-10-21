@@ -16,7 +16,7 @@ function generateTplData(props, imports) {
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _s.camelize(props.moduleName),
-    website: props.website ? props.website : 'https://github.com/' + props.githubUsername,
+    website: props.website,
 
     githubUsername: props.githubUsername,
     name: user.git.name(),
