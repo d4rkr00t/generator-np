@@ -10,7 +10,7 @@ Generator for npm module
 
 ## Features
 * Generate npm module structure with babel, isparta and mocha;
-* Generate package.json with some useful scripts like: [nsp check](https://www.npmjs.com/package/nsp), eslint + pre-commit hook and node-readme for generating README;
+* Generate package.json with some useful scripts like: [nsp check](https://www.npmjs.com/package/nsp), eslint + pre-commit hooks;
 * [Optional] generate CLI boilerplate;
 * [Optional] generate configs for travis and coveralls;
 * [Optional] setup module to use commitizen and cz-conventional-changelog.
