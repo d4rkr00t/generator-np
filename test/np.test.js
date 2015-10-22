@@ -36,7 +36,7 @@ describe('generator', () => {
       'test/setup.js',
       'test/test.test.js',
       'package.json',
-      '.README.md'
+      'README.md'
     ];
 
     helpers.mockPrompt(generator, {
@@ -66,7 +66,7 @@ describe('generator', () => {
     generator.run(() => {
       assert.noFile('.travis.yml');
       assert.noFileContent('package.json', /coveralls/);
-      assert.noFileContent('.README.md', /coveralls/);
+      assert.noFileContent('README.md', /coveralls/);
       done();
     });
   });
@@ -83,7 +83,7 @@ describe('generator', () => {
 
     generator.run(() => {
       assert.noFileContent('package.json', /coveralls/);
-      assert.noFileContent('.README.md', /coveralls/);
+      assert.noFileContent('README.md', /coveralls/);
       assert.noFileContent('.travis.yml', /coveralls/);
       done();
     });
@@ -99,7 +99,7 @@ describe('generator', () => {
 
     generator.run(() => {
       assert.noFileContent('package.json', /cz-conventional-changelog/);
-      assert.noFileContent('.README.md', /Commitizen friendly/);
+      assert.noFileContent('README.md', /Commitizen friendly/);
       done();
     });
   });

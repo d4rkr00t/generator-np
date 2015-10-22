@@ -12,6 +12,6 @@ export default {
   tpl: [
     { from: 'travis.yml', to: '.travis.yml' },
     { from: '_package.json', to: 'package.json' },
-    { from: 'README.md', to: '.README.md' }
+    { from: '.README.md', to: 'README.md' }
   ]
 };
