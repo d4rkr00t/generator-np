@@ -1,6 +1,6 @@
 {
   "name": "generator-np",
-  "version": "2.7.0",
+  "version": "0.0.0-semantically-released",
   "description": "Generator for npm module",
   "keywords": [
     "npm",
@@ -9,16 +9,20 @@
     "bootstrap"
   ],
   "license": "MIT",
-  "repository": "d4rkr00t/generator-np",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d4rkr00t/generator-np.git"
+  },
   "scripts": {
     "audit": "nsp package",
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
     "lint": "eslint src test",
-    "test": "mocha test/*.test.js -r babel/register -r test/setup.js",
-    "validate": "npm run lint && npm test",
     "prepare": "npm run validate && npm run check && npm run build",
-    "pp": "npm run prepare"
+    "pp": "npm run prepare",
+    "test": "mocha test/*.test.js -r babel/register -r test/setup.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "validate": "npm run lint && npm test"
   },
   "author": {
     "name": "Stanislav Sysoev",
@@ -36,6 +40,7 @@
     "mocha": "^2.3.3",
     "nsp": "^1.1.0",
     "pre-commit": "^1.1.1",
+    "semantic-release": "^4.3.5",
     "yeoman-assert": "^2.1.0"
   },
   "dependencies": {
