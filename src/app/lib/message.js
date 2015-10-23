@@ -35,7 +35,7 @@ Setup greenkeeper — http://greenkeeper.io/`;
 
 export default function onEndMessage(log, props) {
   log('');
-  log(chalk.bold('=-=-=-=-=-=-=- Your almost done -=-=-=-=-=-=-='));
+  log(chalk.bold('=-=-=-=-=-=-=- You are almost done! -=-=-=-=-=-=-='));
   log('');
   if (props.travis) {
     log(travis());

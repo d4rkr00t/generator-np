@@ -32,7 +32,7 @@ function greenkeeper() {
 
 function onEndMessage(log, props) {
   log('');
-  log(_chalk2['default'].bold('=-=-=-=-=-=-=- Your almost done -=-=-=-=-=-=-='));
+  log(_chalk2['default'].bold('=-=-=-=-=-=-=- You are almost done! -=-=-=-=-=-=-='));
   log('');
   if (props.travis) {
     log(travis());
