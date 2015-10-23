@@ -33,7 +33,7 @@
     "url": "<%= website %>"
   },
   "pre-commit": [
-    "lint"
+    "validate"
   ],
   "dependencies": {<% if (cli) { %>
     "meow": "^3.4.2",
