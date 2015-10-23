@@ -1,4 +1,4 @@
-import <%= camelModuleName %> from '../lib/';
+import <%= camelModuleName %> from '../src/lib/';
 
 describe('<%= camelModuleName %>', () => {
 
