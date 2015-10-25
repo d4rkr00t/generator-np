@@ -3,10 +3,10 @@ import yeoman from 'yeoman-generator';
 import normalizeUrl from 'normalize-url';
 import _s from 'underscore.string';
 
-import filesConfig from './files-config';
-import userInteraction from './lib/user-interaction';
-import generate from './lib/generate';
-import message from './lib/message';
+import filesConfig from './index/files-config';
+import userInteraction from './index/user-interaction';
+import generate from './index/generate';
+import message from './index/message';
 
 module.exports = yeoman.generators.Base.extend({
   init() {

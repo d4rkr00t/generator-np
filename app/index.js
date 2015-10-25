@@ -14,21 +14,21 @@ var _underscoreString = require('underscore.string');
 
 var _underscoreString2 = _interopRequireDefault(_underscoreString);
 
-var _filesConfig = require('./files-config');
+var _indexFilesConfig = require('./index/files-config');
 
-var _filesConfig2 = _interopRequireDefault(_filesConfig);
+var _indexFilesConfig2 = _interopRequireDefault(_indexFilesConfig);
 
-var _libUserInteraction = require('./lib/user-interaction');
+var _indexUserInteraction = require('./index/user-interaction');
 
-var _libUserInteraction2 = _interopRequireDefault(_libUserInteraction);
+var _indexUserInteraction2 = _interopRequireDefault(_indexUserInteraction);
 
-var _libGenerate = require('./lib/generate');
+var _indexGenerate = require('./index/generate');
 
-var _libGenerate2 = _interopRequireDefault(_libGenerate);
+var _indexGenerate2 = _interopRequireDefault(_indexGenerate);
 
-var _libMessage = require('./lib/message');
+var _indexMessage = require('./index/message');
 
-var _libMessage2 = _interopRequireDefault(_libMessage);
+var _indexMessage2 = _interopRequireDefault(_indexMessage);
 
 module.exports = _yeomanGenerator2['default'].generators.Base.extend({
   init: function init() {
@@ -43,8 +43,8 @@ module.exports = _yeomanGenerator2['default'].generators.Base.extend({
     var user = this.user;
     var fs = this.fs;
 
-    _libUserInteraction2['default']({ prompt: prompt, appname: appname, normalizeUrl: _normalizeUrl2['default'], _s: _underscoreString2['default'] }).then(function (props) {
-      return _libGenerate2['default'](_filesConfig2['default'], props, { _s: _underscoreString2['default'], user: user, fs: fs, templatePath: templatePath, destinationPath: destinationPath });
+    _indexUserInteraction2['default']({ prompt: prompt, appname: appname, normalizeUrl: _normalizeUrl2['default'], _s: _underscoreString2['default'] }).then(function (props) {
+      return _indexGenerate2['default'](_indexFilesConfig2['default'], props, { _s: _underscoreString2['default'], user: user, fs: fs, templatePath: templatePath, destinationPath: destinationPath });
     }).then(function (props) {
       return _this.props = props;
     }).then(function () {
@@ -62,6 +62,6 @@ module.exports = _yeomanGenerator2['default'].generators.Base.extend({
   end: function end() {
     if (!this.props) return;
 
-    _libMessage2['default'](this.log.bind(this), this.props);
+    _indexMessage2['default'](this.log.bind(this), this.props);
   }
 });
