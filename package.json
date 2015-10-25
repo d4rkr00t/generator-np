@@ -20,7 +20,7 @@
     "lint": "eslint src test",
     "prepare": "npm run validate && npm run check && npm run build",
     "pp": "npm run prepare",
-    "test": "mocha test/*.test.js -r babel/register -r test/setup.js",
+    "test": "mocha test/*.test.js -r babel/register",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "validate": "npm run lint && npm test"
   },
