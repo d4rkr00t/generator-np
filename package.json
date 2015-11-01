@@ -14,7 +14,7 @@
     "url": "https://github.com/d4rkr00t/generator-np"
   },
   "scripts": {
-    "audit": "nsp package",
+    "audit": "nsp check package",
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
     "lint": "eslint src test",
