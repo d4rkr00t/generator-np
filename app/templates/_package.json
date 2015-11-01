@@ -45,12 +45,12 @@
     "chai": "^3.3.0",<% if (coveralls) { %>
     "coveralls": "^2.11.4",<% } %><% if (commitizen) { %>
     "cz-conventional-changelog": "^1.1.4",<% } %>
-    "eslint": "^1.7.1",
+    "eslint": "^1.8.0",
     "isparta": "^3.5.0",
     "mocha": "^2.3.3",
     "mocha-lcov-reporter": "1.0.0",
     "nsp": "^2.0.0",
-    "pre-commit": "^1.1.1"
+    "pre-commit": "^1.1.2"
   }<% if (commitizen) { %>,
   "czConfig": {
     "path": "./node_modules/cz-conventional-changelog"
