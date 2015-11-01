@@ -52,7 +52,9 @@
     "nsp": "^2.0.0",
     "pre-commit": "^1.1.2"
   }<% if (commitizen) { %>,
-  "czConfig": {
-    "path": "./node_modules/cz-conventional-changelog"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }<% } %>
 }
