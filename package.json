@@ -14,7 +14,7 @@
     "url": "https://github.com/d4rkr00t/generator-np"
   },
   "scripts": {
-    "audit": "nsp package",
+    "audit": "nsp check package",
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
     "lint": "eslint src test",
@@ -38,7 +38,7 @@
     "cz-conventional-changelog": "^1.1.4",
     "eslint": "^1.8.0",
     "mocha": "^2.3.3",
-    "nsp": "^1.1.0",
+    "nsp": "^2.0.0",
     "pre-commit": "^1.1.1",
     "semantic-release": "^4.3.5",
     "yeoman-assert": "^2.1.0"
