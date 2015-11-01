@@ -5,6 +5,8 @@ node_js:
 install:
   - npm install
 script:
-  - npm run check<% if (coveralls) { %>
+  - npm run check
+  - npm run build
+  - npm run validate<% if (coveralls) { %>
 after_success:
   - npm run coveralls<% } %>
