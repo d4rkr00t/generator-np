@@ -46,7 +46,7 @@
     "coveralls": "^2.11.4",<% } %><% if (commitizen) { %>
     "cz-conventional-changelog": "^1.1.4",<% } %>
     "eslint": "^1.7.1",
-    "isparta": "^3.1.0",
+    "isparta": "^3.5.0",
     "mocha": "^2.3.3",
     "mocha-lcov-reporter": "1.0.0",
     "nsp": "^2.0.0",
