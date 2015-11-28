@@ -29,18 +29,17 @@
 </p>
 
 <p align="center"><big>
-Generator for npm module with ES6+, Babel, Travis and npm scripts
+Generator for npm module with ES6+, [Babel](https://github.com/babel/babel), [Ava](https://github.com/sindresorhus/ava), [ESlint](https://github.com/eslint/eslint), [Travis](https://travis-ci.org), and npm scripts
 </big></p>
 
 ## Features
-* Generate npm module structure with babel, isparta and mocha;
-* Generate package.json with some useful scripts like: [nsp check](https://www.npmjs.com/package/nsp), eslint + pre-commit hooks;
+* Generate npm module structure with babel, ava, pre-commit hooks, linters, etc;
 * [Optional] generate CLI boilerplate;
 * [Optional] generate configs for travis and coveralls;
 * [Optional] setup module to use commitizen and cz-conventional-changelog.
 * [Optional] center module name and badges in README.md;
 
-![generator-np](https://cloud.githubusercontent.com/assets/200119/11451695/338802a8-95e0-11e5-82f8-7a4ea0186784.png)
+![generator-np](https://cloud.githubusercontent.com/assets/200119/11453522/1f0f187c-961f-11e5-930f-e245d72e29c5.png)
 
 ## Install
 

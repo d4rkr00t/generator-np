@@ -1,5 +1,6 @@
+import test from 'ava';
 import <%= camelModuleName %> from '../src/lib/';
 
-describe('<%= camelModuleName %>', () => {
-  assert.equal(1, 1);
+test('<%= camelModuleName %>', t => {
+  t.equal(1, 1);
 });
