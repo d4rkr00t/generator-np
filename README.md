@@ -1,4 +1,8 @@
-<big><h1 align="center">generator-np</h1></big>
+<div align="center">
+  <a href="http://git.io/rise">
+    <img src="https://cloud.githubusercontent.com/assets/200119/11451384/b82444a0-95d5-11e5-8b14-c1bfd0cd6634.png">
+  </a>
+</div>
 
 <p align="center">
   <a href="https://npmjs.org/package/generator-np">
