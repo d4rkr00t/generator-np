@@ -1,13 +1,14 @@
 'use strict';
 
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.generateTplData = generateTplData;
 exports.copy = copy;
 exports.tpl = tpl;
 exports.cli = cli;
 exports.tests = tests;
-exports['default'] = generate;
-
+exports.default = generate;
 function generateTplData(props, imports) {
   var _s = imports._s;
   var user = imports.user;

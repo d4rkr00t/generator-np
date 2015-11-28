@@ -20,10 +20,12 @@
     "audit": "nsp check package",
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
+    "cov": "babel-node ./node_modules/.bin/isparta cover --report lcovonly --report html _mocha test/*.test.js",
+    "coveralls": "npm run cov && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint src test",
     "prepare": "npm run validate && npm run check && npm run build",
     "pp": "npm run prepare",
-    "test": "mocha test/*.test.js -r babel/register",
+    "test": "mocha test/*.test.js --compilers js:babel-core/register",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "validate": "npm run lint && npm test"
   },
@@ -36,8 +38,11 @@
     "validate"
   ],
   "devDependencies": {
-    "babel": "^5.8.23",
+    "babel-cli": "^6.2.0",
+    "babel-core": "^6.2.1",
     "babel-eslint": "^4.1.5",
+    "babel-preset-es2015": "^6.1.18",
+    "coveralls": "^2.11.4",
     "cz-conventional-changelog": "^1.1.4",
     "eslint": "^1.9.0",
     "mocha": "^2.3.3",
