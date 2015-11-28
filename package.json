@@ -2,6 +2,9 @@
   "name": "generator-np",
   "version": "0.0.0-semantically-released",
   "description": "Generator for npm module with ES6+, Babel, Travis and npm scripts",
+  "files": [
+    "app/"
+  ],
   "keywords": [
     "npm",
     "yeoman",
