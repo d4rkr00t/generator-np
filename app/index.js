@@ -1,5 +1,7 @@
 'use strict';
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 var _yeomanGenerator = require('yeoman-generator');
 
 var _yeomanGenerator2 = _interopRequireDefault(_yeomanGenerator);
@@ -8,33 +10,31 @@ var _normalizeUrl = require('normalize-url');
 
 var _normalizeUrl2 = _interopRequireDefault(_normalizeUrl);
 
-var _underscore = require('underscore.string');
+var _underscoreString = require('underscore.string');
 
-var _underscore2 = _interopRequireDefault(_underscore);
+var _underscoreString2 = _interopRequireDefault(_underscoreString);
 
 var _yosay = require('yosay');
 
 var _yosay2 = _interopRequireDefault(_yosay);
 
-var _filesConfig = require('./index/files-config');
+var _indexFilesConfig = require('./index/files-config');
 
-var _filesConfig2 = _interopRequireDefault(_filesConfig);
+var _indexFilesConfig2 = _interopRequireDefault(_indexFilesConfig);
 
-var _userInteraction = require('./index/user-interaction');
+var _indexUserInteraction = require('./index/user-interaction');
 
-var _userInteraction2 = _interopRequireDefault(_userInteraction);
+var _indexUserInteraction2 = _interopRequireDefault(_indexUserInteraction);
 
-var _generate = require('./index/generate');
+var _indexGenerate = require('./index/generate');
 
-var _generate2 = _interopRequireDefault(_generate);
+var _indexGenerate2 = _interopRequireDefault(_indexGenerate);
 
-var _message = require('./index/message');
+var _indexMessage = require('./index/message');
 
-var _message2 = _interopRequireDefault(_message);
+var _indexMessage2 = _interopRequireDefault(_indexMessage);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = _yeomanGenerator2.default.generators.Base.extend({
+module.exports = _yeomanGenerator2['default'].generators.Base.extend({
   init: function init() {
     var _this = this;
 
@@ -47,25 +47,27 @@ module.exports = _yeomanGenerator2.default.generators.Base.extend({
     var user = this.user;
     var fs = this.fs;
 
-    this.log((0, _yosay2.default)('⦿ NP: A convenient generator for npm modules.'));
+    this.log(_yosay2['default']('⦿ NP: A convenient generator for npm modules.'));
 
-    (0, _userInteraction2.default)({ prompt: prompt, appname: appname, normalizeUrl: _normalizeUrl2.default, _s: _underscore2.default }).then(function (props) {
-      return (0, _generate2.default)(_filesConfig2.default, props, { _s: _underscore2.default, user: user, fs: fs, templatePath: templatePath, destinationPath: destinationPath });
+    _indexUserInteraction2['default']({ prompt: prompt, appname: appname, normalizeUrl: _normalizeUrl2['default'], _s: _underscoreString2['default'] }).then(function (props) {
+      return _indexGenerate2['default'](_indexFilesConfig2['default'], props, { _s: _underscoreString2['default'], user: user, fs: fs, templatePath: templatePath, destinationPath: destinationPath });
     }).then(function (props) {
       return _this.props = props;
     }).then(function () {
       return cb();
-    }).catch(console.error.bind(console)); // eslint-disable-line
+    })['catch'](console.error.bind(console)); // eslint-disable-line
   },
+
   install: function install() {
     if (this.options.skipInstall) return;
 
     this.npmInstall();
     this.spawnCommand('git', ['init']);
   },
+
   end: function end() {
     if (!this.props) return;
 
-    (0, _message2.default)(this.log.bind(this), this.props);
+    _indexMessage2['default'](this.log.bind(this), this.props);
   }
 });
