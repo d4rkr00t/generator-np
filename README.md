@@ -33,7 +33,7 @@
 </p>
 
 <p align="center"><big>
-Generator for npm module with ES6+, [Babel](https://github.com/babel/babel), [Ava](https://github.com/sindresorhus/ava), [ESlint](https://github.com/eslint/eslint), [Travis](https://travis-ci.org), and npm scripts
+Generator for npm module with ES6+, <a href="https://github.com/babel/babel">Babel</a>, <a href="https://github.com/sindresorhus/ava">Ava</a>, <a href="https://github.com/eslint/eslint">ESlint</a>, <a href="https://travis-ci.org">Travis</a>, and npm scripts
 </big></p>
 
 ## Features
