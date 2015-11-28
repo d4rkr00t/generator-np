@@ -49,6 +49,7 @@ npm install -g generator-np
 ```
 
 ## Usage
+> You need [Yeoman](http://yeoman.io/) to run this command.
 
 ```
 yo np
