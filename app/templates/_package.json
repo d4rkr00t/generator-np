@@ -1,6 +1,6 @@
 {
   "name": "<%= moduleName %>",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "<%= moduleDescription %>",<% if (cli) { %>
   "bin": "cli.js",<% } %>
   "main": "lib/index.js",
