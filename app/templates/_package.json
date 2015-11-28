@@ -46,7 +46,7 @@
     "chai": "^3.3.0",<% if (coveralls) { %>
     "coveralls": "^2.11.4",<% } %><% if (commitizen) { %>
     "cz-conventional-changelog": "^1.1.4",<% } %>
-    "eslint": "^1.8.0",
+    "eslint": "^1.10.1",
     "isparta": "^3.5.0",
     "mocha": "^2.3.3",
     "mocha-lcov-reporter": "1.0.0",
