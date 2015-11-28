@@ -7,6 +7,10 @@
     <img src="https://img.shields.io/npm/v/generator-np.svg" alt="NPM Version">
   </a>
 
+  <a href="https://npmjs.org/package/generator-np">
+    <img src="https://img.shields.io/npm/dm/generator-np.svg" alt="NPM downloads">
+  </a>
+
   <a href="http://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/npm/l/generator-np.svg" alt="License">
   </a>
