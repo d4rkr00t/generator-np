@@ -1,18 +1,21 @@
 {
   "name": "generator-np",
   "version": "0.0.0-semantically-released",
-  "description": "Generator for npm module with ES6+, Babel, Travis and npm scripts",
+  "description": "Generator for npm module with ES6+, Babel, Ava, ESlint, Travis and npm scripts",
   "files": [
     "app/"
   ],
   "keywords": [
+    "ava",
     "babel",
     "boilerplate",
     "bootstrap",
     "cli",
+    "commitizen",
     "coveralls",
     "es2015",
     "es6",
+    "eslint",
     "generator",
     "javascript",
     "kit",
@@ -41,15 +44,15 @@
     "audit": "nsp check package",
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
-    "cov": "nyc --reporter=lcov --reporter=text --reporter=html npm test",
-    "coveralls": "npm run cov && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "coverage": "nyc --reporter=lcov --reporter=text --reporter=html npm test",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint src test",
     "prepare": "npm run validate && npm run check && npm run build",
     "pp": "npm run prepare",
     "test": "ava --serial",
+    "test:watch": "watch 'npm run test' src -d",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "validate": "npm run lint && npm test",
-    "watch:test": "watch 'npm run test' src -d"
+    "validate": "npm run lint && npm test"
   },
   "author": {
     "name": "Stanislav Sysoev",

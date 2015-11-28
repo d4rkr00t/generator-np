@@ -6,7 +6,6 @@ exports.generateTplData = generateTplData;
 exports.copy = copy;
 exports.tpl = tpl;
 exports.cli = cli;
-exports.tests = tests;
 exports['default'] = generate;
 
 function generateKeywords(keywords) {
@@ -69,14 +68,6 @@ function cli(tplData, imports) {
   fs.copyTpl(templatePath('src/cli.js'), destinationPath('src/cli.js'), tplData);
 }
 
-function tests(props, tplData, imports) {
-  var fs = imports.fs;
-  var templatePath = imports.templatePath;
-  var destinationPath = imports.destinationPath;
-
-  fs.copyTpl(templatePath('test/index.js'), destinationPath('test/' + props.moduleName + '.test.js'), tplData);
-}
-
 function generate(files, props, imports) {
   var copyList = files.copy;
   var tplList = files.tpl;
@@ -87,7 +78,6 @@ function generate(files, props, imports) {
 
   copy(copyList, imports);
   tpl(props, tplList, tplData, imports);
-  tests(props, tplData, imports);
 
   return Promise.resolve(props);
 }

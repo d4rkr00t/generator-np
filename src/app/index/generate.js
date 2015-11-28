@@ -47,12 +47,6 @@ export function cli(tplData, imports) {
   fs.copyTpl(templatePath('src/cli.js'), destinationPath('src/cli.js'), tplData);
 }
 
-export function tests(props, tplData, imports) {
-  const { fs, templatePath, destinationPath } = imports;
-
-  fs.copyTpl(templatePath('test/index.js'), destinationPath(`test/${props.moduleName}.test.js`), tplData);
-}
-
 export default function generate(files, props, imports) {
   const { copy: copyList, tpl: tplList } = files;
   const tplData = generateTplData(props, imports);
@@ -61,7 +55,6 @@ export default function generate(files, props, imports) {
 
   copy(copyList, imports);
   tpl(props, tplList, tplData, imports);
-  tests(props, tplData, imports);
 
   return Promise.resolve(props);
 }

@@ -35,8 +35,7 @@ test('generates expected files', () => {
     '.istanbul.yml',
     '.travis.yml',
     'src/lib/index.js',
-    'test/setup.js',
-    'test/test.test.js',
+    'test/index.js',
     'package.json',
     'README.md'
   ];
