@@ -14,6 +14,10 @@ var _underscoreString = require('underscore.string');
 
 var _underscoreString2 = _interopRequireDefault(_underscoreString);
 
+var _yosay = require('yosay');
+
+var _yosay2 = _interopRequireDefault(_yosay);
+
 var _indexFilesConfig = require('./index/files-config');
 
 var _indexFilesConfig2 = _interopRequireDefault(_indexFilesConfig);
@@ -42,6 +46,8 @@ module.exports = _yeomanGenerator2['default'].generators.Base.extend({
     var appname = this.appname;
     var user = this.user;
     var fs = this.fs;
+
+    this.log(_yosay2['default']('⦿ NP: A convenient generator for npm modules.'));
 
     _indexUserInteraction2['default']({ prompt: prompt, appname: appname, normalizeUrl: _normalizeUrl2['default'], _s: _underscoreString2['default'] }).then(function (props) {
       return _indexGenerate2['default'](_indexFilesConfig2['default'], props, { _s: _underscoreString2['default'], user: user, fs: fs, templatePath: templatePath, destinationPath: destinationPath });

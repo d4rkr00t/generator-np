@@ -2,6 +2,7 @@ import yeoman from 'yeoman-generator';
 
 import normalizeUrl from 'normalize-url';
 import _s from 'underscore.string';
+import yosay from 'yosay';
 
 import filesConfig from './index/files-config';
 import userInteraction from './index/user-interaction';
@@ -18,6 +19,8 @@ module.exports = yeoman.generators.Base.extend({
     const appname = this.appname;
     const user = this.user;
     const fs = this.fs;
+
+    this.log(yosay('⦿ NP: A convenient generator for npm modules.'));
 
     userInteraction({ prompt, appname, normalizeUrl, _s })
       .then(props => generate(filesConfig, props, { _s, user, fs, templatePath, destinationPath }))
