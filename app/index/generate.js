@@ -1,15 +1,14 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 exports.generateKeywords = generateKeywords;
 exports.generateTplData = generateTplData;
 exports.copy = copy;
 exports.tpl = tpl;
 exports.cli = cli;
 exports.tests = tests;
-exports.default = generate;
+exports['default'] = generate;
+
 function generateKeywords(keywords) {
   return (keywords.indexOf(',') !== -1 ? keywords.split(',') : keywords.split(' ')).map(function (kw) {
     return '"' + kw.trim() + '"';
