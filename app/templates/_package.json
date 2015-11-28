@@ -9,10 +9,7 @@
     "cli.js"<% } %>
   ],
   "keywords": [
-    "npm",
-    "yeoman",
-    "generator",
-    "bootstrap"
+    <%- moduleKeywords %>
   ],
   "license": "MIT",
   "repository": {

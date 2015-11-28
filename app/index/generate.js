@@ -3,12 +3,19 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.generateKeywords = generateKeywords;
 exports.generateTplData = generateTplData;
 exports.copy = copy;
 exports.tpl = tpl;
 exports.cli = cli;
 exports.tests = tests;
 exports.default = generate;
+function generateKeywords(keywords) {
+  return (keywords.indexOf(',') !== -1 ? keywords.split(',') : keywords.split(' ')).map(function (kw) {
+    return '"' + kw.trim() + '"';
+  }).join(',');
+}
+
 function generateTplData(props, imports) {
   var _s = imports._s;
   var user = imports.user;
@@ -17,6 +24,7 @@ function generateTplData(props, imports) {
     center: props.center,
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
+    moduleKeywords: generateKeywords(props.moduleKeywords),
     camelModuleName: _s.camelize(props.moduleName),
     website: props.website,
 

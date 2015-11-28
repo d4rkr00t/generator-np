@@ -13,7 +13,7 @@ function userInteraction(imports) {
   return new Promise(function (resolve) {
     prompt([{
       name: 'moduleName',
-      message: 'What do you want to name your module?',
+      message: 'What is the module name?',
       default: appname.replace(/\s/g, '-'),
       required: true,
       filter: function filter(val) {
@@ -21,8 +21,13 @@ function userInteraction(imports) {
       }
     }, {
       name: 'moduleDescription',
-      message: 'What is description for your module?',
+      message: 'What is the module description?',
       default: 'My awesome module',
+      required: true
+    }, {
+      name: 'moduleKeywords',
+      message: 'What are the module keywords?',
+      default: 'node, module',
       required: true
     }, {
       type: 'confirm',

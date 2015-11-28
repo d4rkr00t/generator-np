@@ -1,3 +1,9 @@
+export function generateKeywords(keywords) {
+  return (keywords.indexOf(',') !== -1 ? keywords.split(',') : keywords.split(' '))
+    .map(kw => '"' + kw.trim() + '"')
+    .join(',');
+}
+
 export function generateTplData(props, imports) {
   const { _s, user } = imports;
 
@@ -5,6 +11,7 @@ export function generateTplData(props, imports) {
     center: props.center,
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
+    moduleKeywords: generateKeywords(props.moduleKeywords),
     camelModuleName: _s.camelize(props.moduleName),
     website: props.website,
 

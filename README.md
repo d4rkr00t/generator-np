@@ -40,7 +40,7 @@ Generator for npm module with ES6+, Babel, Travis and npm scripts
 * [Optional] setup module to use commitizen and cz-conventional-changelog.
 * [Optional] center module name and badges in README.md;
 
-![generator-np](https://cloud.githubusercontent.com/assets/200119/10646398/8f24a78c-783b-11e5-9755-8f57f28ba187.png)
+![generator-np](https://cloud.githubusercontent.com/assets/200119/11451695/338802a8-95e0-11e5-82f8-7a4ea0186784.png)
 
 ## Install
 
