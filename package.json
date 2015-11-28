@@ -33,7 +33,7 @@
     "validate"
   ],
   "devDependencies": {
-    "babel": "^5.8.23",
+    "babel": "^6.1.18",
     "babel-eslint": "^4.1.5",
     "cz-conventional-changelog": "^1.1.4",
     "eslint": "^1.9.0",
