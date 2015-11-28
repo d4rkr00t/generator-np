@@ -104,6 +104,21 @@ describe('generator', () => {
     });
   });
 
+  it('center', done => {
+    helpers.mockPrompt(generator, {
+      moduleName: 'test',
+      moduleDescription: 'My awesome module description',
+      githubUsername: 'test',
+      website: 'test.com',
+      center: true
+    });
+
+    generator.run(() => {
+      assert.fileContent('README.md', /<big><h1/);
+      done();
+    });
+  });
+
   it('CLI', done => {
     helpers.mockPrompt(generator, {
       moduleName: 'test',

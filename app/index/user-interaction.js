@@ -24,6 +24,12 @@ function userInteraction(imports) {
       'default': 'My awesome module',
       required: true
     }, {
+      type: 'confirm',
+      name: 'center',
+      message: 'Center title and badges in README?',
+      store: true,
+      'default': false
+    }, {
       name: 'githubUsername',
       message: 'What is your GitHub username?',
       store: true,

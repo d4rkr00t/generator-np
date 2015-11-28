@@ -13,6 +13,7 @@ function generateTplData(props, imports) {
   var user = imports.user;
 
   return {
+    center: props.center,
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _s.camelize(props.moduleName),

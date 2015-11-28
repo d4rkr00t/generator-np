@@ -2,6 +2,7 @@ export function generateTplData(props, imports) {
   const { _s, user } = imports;
 
   return {
+    center: props.center,
     moduleName: props.moduleName,
     moduleDescription: props.moduleDescription,
     camelModuleName: _s.camelize(props.moduleName),
