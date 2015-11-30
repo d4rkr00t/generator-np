@@ -63,7 +63,7 @@
     "validate"
   ],
   "devDependencies": {
-    "ava": "^0.6.1",
+    "ava": "^0.7.0",
     "babel": "^5.8.34",
     "babel-eslint": "^4.1.5",
     "coveralls": "^2.11.4",
