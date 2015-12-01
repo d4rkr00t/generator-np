@@ -50,7 +50,7 @@
     "prepare": "npm run validate && npm run check && npm run build",
     "pp": "npm run prepare",
     "test": "ava --serial",
-    "test:watch": "watch 'npm run test' src -d",
+    "test:watch": "chokidar 'test/index.js' 'src/**' -c 'npm test' --silent --initial",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "validate": "npm run lint && npm test"
   },
@@ -66,6 +66,7 @@
     "ava": "^0.7.0",
     "babel": "^5.8.34",
     "babel-eslint": "^4.1.5",
+    "chokidar-cli": "^1.2.0",
     "coveralls": "^2.11.4",
     "cz-conventional-changelog": "^1.1.4",
     "eslint": "^1.10.1",
@@ -73,7 +74,6 @@
     "nyc": "^4.0.1",
     "pre-commit": "^1.1.1",
     "semantic-release": "^4.3.5",
-    "watch": "^0.16.0",
     "yeoman-assert": "^2.1.0"
   },
   "dependencies": {

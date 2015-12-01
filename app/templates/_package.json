@@ -24,7 +24,7 @@
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",<% } %>
     "lint": "eslint src test",
     "test": "ava",
-    "test:watch": "watch 'npm run test' src test -d",
+    "test:watch": "chokidar 'test/*.js' 'src/**' -c 'npm test' --silent --initial",
     "validate": "npm run lint && npm test",
     "prepare": "npm run validate && npm run check && npm run build",
     "pp": "npm run prepare"
@@ -45,14 +45,14 @@
     "ava": "^0.7.0",
     "babel": "^5.8.33",
     "babel-core": "^5.8.33",
-    "babel-eslint": "^4.1.5",<% if (coveralls) { %>
+    "babel-eslint": "^4.1.5",
+    "chokidar-cli": "^1.2.0",<% if (coveralls) { %>
     "coveralls": "^2.11.4",<% } %><% if (commitizen) { %>
     "cz-conventional-changelog": "^1.1.4",<% } %>
     "eslint": "^1.10.1",
     "nsp": "^2.0.0",
     "nyc": "^4.0.1",
-    "pre-commit": "^1.1.2",
-    "watch": "^0.16.0"
+    "pre-commit": "^1.1.2"
   }<% if (commitizen) { %>,
   "config": {
     "commitizen": {
