@@ -37,9 +37,6 @@
     "no-unreachable": [2],
     "use-isnan": [2],
     "valid-jsdoc": [2, {
-      "prefer": {
-        "return": "returns"
-      },
       "requireReturn": false,
       "requireParamDescription": false,
       "requireReturnDescription": false
