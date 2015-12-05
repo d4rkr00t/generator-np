@@ -52,6 +52,7 @@
     "test": "ava --serial",
     "test:watch": "chokidar 'test/index.js' 'src/**' -c 'npm test' --silent --initial",
     "validate": "npm run lint && npm test",
+    "semantic-release": "semantic-release post",
     "major": "pmm major",
     "minor": "pmm minor",
     "patch": "pmm patch"
@@ -76,6 +77,7 @@
     "nyc": "^4.0.1",
     "pmm": "^1.0.1",
     "pre-commit": "^1.1.1",
+    "semantic-release": "^4.3.5",
     "yeoman-assert": "^2.1.0"
   },
   "dependencies": {
