@@ -26,7 +26,6 @@ export default function userInteraction(imports) {
         type: 'confirm',
         name: 'center',
         message: 'Center title and badges in README?',
-        store: true,
         default: false
       },
       {
