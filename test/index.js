@@ -105,6 +105,22 @@ test('center', () => {
   });
 });
 
+test('automatic github release', () => {
+  return run({
+    moduleName: 'test',
+    moduleDescription: 'My awesome module description',
+    githubUsername: 'test',
+    website: 'test.com',
+    githubRelease: true,
+    commitizen: true,
+    travis: true
+  }).then(() => {
+    assert.fileContent('.travis.yml', /github-release/);
+    assert.fileContent('package.json', /github-release/);
+    assert.fileContent('package.json', /conventional-github-releaser/);
+  });
+});
+
 test('cli', () => {
   return run({
     moduleName: 'test',

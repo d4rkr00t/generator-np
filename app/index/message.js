@@ -26,6 +26,10 @@ function commitizen() {
   return _chalk2['default'].blue('Commitizen:') + '\nFor finishing setup install \'commitizen\' module globally. And then just use \'git cz\' instead of \'git commit\'.\nnpm i -g commitizen';
 }
 
+function githubRelease() {
+  return _chalk2['default'].cyan('Conventional Github Releaser:') + '\nMake a new GitHub release from git metadata.\nTo complete setup set your environment variable CONVENTIONAL_GITHUB_RELEASER_TOKEN to your personal github access token (https://github.com/settings/tokens/new) in Travis CI settings.';
+}
+
 function greenkeeper() {
   return _chalk2['default'].green('Greenkeeper:') + '\nGreenkeeper automates dependency updates.\nSetup greenkeeper — http://greenkeeper.io/';
 }
@@ -46,6 +50,11 @@ function onEndMessage(log, props) {
 
   if (props.commitizen) {
     log(commitizen());
+    log('');
+  }
+
+  if (props.githubRelease) {
+    log(githubRelease());
     log('');
   }
 
