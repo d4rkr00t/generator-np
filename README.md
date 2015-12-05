@@ -37,7 +37,8 @@ Generator for npm module with ES6+, <a href="https://github.com/babel/babel">Bab
 </big></p>
 
 ## Features
-* Generate npm module structure with babel, ava, pre-commit hooks, linters, etc;
+* Generates npm module structure with babel, ava, pre-commit hooks, linters, etc;
+* Adds usefull npm scripts which helps with testing, publishing, etc;
 * [Optional] generate CLI boilerplate;
 * [Optional] generate configs for travis and coveralls;
 * [Optional] setup module to use commitizen and cz-conventional-changelog.
