@@ -61,6 +61,13 @@ export default function userInteraction(imports) {
         default: true
       },
       {
+        name: 'githubRelease',
+        message: 'Do you need automatic github releases?',
+        type: 'confirm',
+        default: false,
+        when(props) { return props.commitizen && props.travis; }
+      },
+      {
         name: 'cli',
         message: 'Do you need a CLI?',
         type: 'confirm',

@@ -26,6 +26,13 @@ For finishing setup install 'commitizen' module globally. And then just use 'git
 npm i -g commitizen`;
 }
 
+function githubRelease() {
+  return chalk.cyan('Conventional Github Releaser:')
+  + `
+Make a new GitHub release from git metadata.
+To complete setup set your environment variable CONVENTIONAL_GITHUB_RELEASER_TOKEN to your personal github access token (https://github.com/settings/tokens/new) in Travis CI settings.`;
+}
+
 function greenkeeper() {
   return chalk.green('Greenkeeper:')
   + `
@@ -49,6 +56,11 @@ export default function onEndMessage(log, props) {
 
   if (props.commitizen) {
     log(commitizen());
+    log('');
+  }
+
+  if (props.githubRelease) {
+    log(githubRelease());
     log('');
   }
 

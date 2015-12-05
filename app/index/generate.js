@@ -33,6 +33,7 @@ function generateTplData(props, imports) {
     travis: props.travis,
     coveralls: props.travis && props.coveralls,
     commitizen: props.commitizen,
+    githubRelease: props.githubRelease,
 
     cli: props.cli
   };
