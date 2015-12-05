@@ -1,6 +1,6 @@
 {
   "name": "generator-np",
-  "version": "0.0.0-semantically-released",
+  "version": "2.18.0",
   "description": "Generator for npm module with ES6+, Babel, Ava, ESlint, Travis and npm scripts",
   "files": [
     "app/"
