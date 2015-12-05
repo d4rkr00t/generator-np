@@ -47,12 +47,14 @@
     "coverage": "nyc --reporter=lcov --reporter=text --reporter=html npm test",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint src test",
-    "prepare": "npm run validate && npm run check && npm run build",
+    "prepare": "npm run build && npm run validate && npm run check",
     "pp": "npm run prepare",
     "test": "ava --serial",
     "test:watch": "chokidar 'test/index.js' 'src/**' -c 'npm test' --silent --initial",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "validate": "npm run lint && npm test"
+    "validate": "npm run lint && npm test",
+    "major": "pmm major",
+    "minor": "pmm minor",
+    "patch": "pmm patch"
   },
   "author": {
     "name": "Stanislav Sysoev",
@@ -72,8 +74,8 @@
     "eslint": "^1.10.1",
     "nsp": "^2.0.0",
     "nyc": "^4.0.1",
+    "pmm": "^1.0.0",
     "pre-commit": "^1.1.1",
-    "semantic-release": "^4.3.5",
     "yeoman-assert": "^2.1.0"
   },
   "dependencies": {
