@@ -41,10 +41,11 @@ Generator for npm module with ES6+, <a href="https://github.com/babel/babel">Bab
 * Adds usefull npm scripts which helps with testing, publishing, etc;
 * [Optional] generate CLI boilerplate;
 * [Optional] generate configs for travis and coveralls;
-* [Optional] setup module to use commitizen and cz-conventional-changelog.
+* [Optional] setup module to use commitizen and cz-conventional-changelog;
 * [Optional] center module name and badges in README.md;
+* [Optional] automatic [github releases](https://help.github.com/articles/about-releases/) through [conventional-github-releaser](https://github.com/stevemao/conventional-github-releaser#setup-token-for-cli), **requires setup for travis and commitizen**.
 
-![generator-np](https://cloud.githubusercontent.com/assets/200119/11453522/1f0f187c-961f-11e5-930f-e245d72e29c5.png)
+![generator-np](https://cloud.githubusercontent.com/assets/200119/11610391/f3511598-9bb2-11e5-95bb-43844ef06d34.png)
 
 ## Install
 
