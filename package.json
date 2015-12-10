@@ -75,7 +75,7 @@
     "cz-conventional-changelog": "^1.1.5",
     "eslint": "^1.10.3",
     "nsp": "^2.1.0",
-    "nyc": "^4.0.1",
+    "nyc": "^5.0.0",
     "pmm": "^1.0.1",
     "pre-commit": "^1.1.1",
     "yeoman-assert": "^2.1.0"
