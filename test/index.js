@@ -1,9 +1,8 @@
 import path from 'path';
-import yeomanGenerator from 'yeoman-generator';
 import assert from 'yeoman-assert';
+import helpers from 'yeoman-test';
 import test from 'ava';
 
-const helpers = yeomanGenerator.test;
 const tempDir = path.join(__dirname, '.temp');
 const deps = ['../../app'];
 

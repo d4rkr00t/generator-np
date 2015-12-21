@@ -34,7 +34,7 @@ var _indexMessage = require('./index/message');
 
 var _indexMessage2 = _interopRequireDefault(_indexMessage);
 
-module.exports = _yeomanGenerator2['default'].generators.Base.extend({
+module.exports = _yeomanGenerator2['default'].Base.extend({
   init: function init() {
     var _this = this;
 

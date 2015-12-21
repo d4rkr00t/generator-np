@@ -9,7 +9,7 @@ import userInteraction from './index/user-interaction';
 import generate from './index/generate';
 import message from './index/message';
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
   init() {
     const cb = this.async();
 
