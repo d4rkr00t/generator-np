@@ -66,7 +66,7 @@
     "validate"
   ],
   "devDependencies": {
-    "ava": "^0.8.0",
+    "ava": "^0.10.0",
     "babel": "^5.8.34",
     "babel-eslint": "^4.1.5",
     "chokidar-cli": "^1.2.0",
