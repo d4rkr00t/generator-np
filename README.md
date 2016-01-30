@@ -70,4 +70,4 @@ Stanislav Sysoev <d4rkr00t@gmail.com> http://github.com/d4rkr00t
 
 ## Contributing
 
-Contributing are highly welcome! This repo is commitizen friendly — please read about it [here](http://commitizen.github.io/cz-cli/).
+Contributions are highly welcome! This repo is commitizen friendly — please read about it [here](http://commitizen.github.io/cz-cli/).
