@@ -13,9 +13,9 @@ module.exports = yeoman.Base.extend({
   init() {
     const cb = this.async();
 
-    const prompt = this.prompt.bind(this);
-    const templatePath = this.templatePath.bind(this);
-    const destinationPath = this.destinationPath.bind(this);
+    const prompt = ::this.prompt;
+    const templatePath = ::this.templatePath;
+    const destinationPath = ::this.destinationPath;
     const appname = this.appname;
     const user = this.user;
     const fs = this.fs;
@@ -26,7 +26,7 @@ module.exports = yeoman.Base.extend({
       .then(props => generate(filesConfig, props, { _s, user, fs, templatePath, destinationPath }))
       .then(props => this.props = props)
       .then(() => cb())
-      .catch(console.error.bind(console)); // eslint-disable-line
+      .catch(::console.error); // eslint-disable-line
   },
 
   install() {
@@ -39,6 +39,6 @@ module.exports = yeoman.Base.extend({
   end() {
     if (!this.props) return;
 
-    message(this.log.bind(this), this.props);
+    message(::this.log, this.props);
   }
 });

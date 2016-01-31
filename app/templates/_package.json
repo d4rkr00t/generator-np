@@ -20,7 +20,7 @@
     "audit": "nsp check package",
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
-    "coverage": "nyc --reporter=lcov --reporter=text --reporter=html npm test",<% if (coveralls) { %>
+    "coverage": "nyc --require babel-core/register --reporter=lcov --reporter=text --reporter=html npm test",<% if (coveralls) { %>
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",<% } %><% if (githubRelease) { %>
     "github-release": "conventional-github-releaser -p angular",<% } %>
     "lint": "eslint src test",
@@ -47,9 +47,11 @@
   <% } %>},
   "devDependencies": {
     "ava": "^0.11.0",
-    "babel": "^5.8.33",
-    "babel-core": "^5.8.33",
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
     "babel-eslint": "^4.1.5",
+    "babel-plugin-transform-function-bind": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
     "chokidar-cli": "^1.2.0",<% if (githubRelease) { %>
     "conventional-github-releaser": "^0.5.1",<% } %><% if (coveralls) { %>
     "coveralls": "^2.11.6",<% } %><% if (commitizen) { %>

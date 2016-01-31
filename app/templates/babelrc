@@ -1,4 +1,4 @@
 {
-  "stage": 1,
-  "loose": ["es6.modules", "es6.classes"]
+  "presets": ["es2015"],
+  "plugins": ["transform-function-bind"]
 }

@@ -1,8 +1,9 @@
 'use strict';
 
-exports.__esModule = true;
-exports['default'] = userInteraction;
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = userInteraction;
 function userInteraction(imports) {
   var prompt = imports.prompt;
   var appname = imports.appname;
@@ -13,7 +14,7 @@ function userInteraction(imports) {
     prompt([{
       name: 'moduleName',
       message: 'What is the module name?',
-      'default': appname.replace(/\s/g, '-'),
+      default: appname.replace(/\s/g, '-'),
       required: true,
       filter: function filter(val) {
         return _s.slugify(val);
@@ -21,18 +22,18 @@ function userInteraction(imports) {
     }, {
       name: 'moduleDescription',
       message: 'What is the module description?',
-      'default': 'My awesome module',
+      default: 'My awesome module',
       required: true
     }, {
       name: 'moduleKeywords',
       message: 'What are the module keywords?',
-      'default': 'node, module',
+      default: 'node, module',
       required: true
     }, {
       type: 'confirm',
       name: 'center',
       message: 'Center title and badges in README?',
-      'default': false
+      default: false
     }, {
       name: 'githubUsername',
       message: 'What is your GitHub username?',
@@ -42,7 +43,7 @@ function userInteraction(imports) {
       name: 'website',
       message: 'What is the URL of your website?',
       store: false,
-      'default': function _default(props) {
+      default: function _default(props) {
         return 'https://github.com/' + props.githubUsername;
       },
       filter: function filter(val) {
@@ -52,12 +53,12 @@ function userInteraction(imports) {
       name: 'travis',
       message: 'Do you need a .travis.yml?',
       type: 'confirm',
-      'default': true
+      default: true
     }, {
       name: 'coveralls',
       message: 'Do you need setup for coveralls?',
       type: 'confirm',
-      'default': true,
+      default: true,
       when: function when(props) {
         return props.travis;
       }
@@ -65,12 +66,12 @@ function userInteraction(imports) {
       name: 'commitizen',
       message: 'Do you need setup for commitizen?',
       type: 'confirm',
-      'default': true
+      default: true
     }, {
       name: 'githubRelease',
       message: 'Do you need automatic github releases?',
       type: 'confirm',
-      'default': false,
+      default: false,
       when: function when(props) {
         return props.commitizen && props.travis;
       }
@@ -78,9 +79,7 @@ function userInteraction(imports) {
       name: 'cli',
       message: 'Do you need a CLI?',
       type: 'confirm',
-      'default': false
+      default: false
     }], resolve);
   });
 }
-
-module.exports = exports['default'];
