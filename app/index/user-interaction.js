@@ -10,6 +10,7 @@ function userInteraction(imports) {
   var normalizeUrl = imports.normalizeUrl;
   var _s = imports._s;
 
+
   return new Promise(function (resolve) {
     prompt([{
       name: 'moduleName',

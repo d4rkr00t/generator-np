@@ -19,6 +19,7 @@ function generateTplData(props, imports) {
   var _s = imports._s;
   var user = imports.user;
 
+
   return {
     center: props.center,
     moduleName: props.moduleName,
@@ -45,6 +46,7 @@ function copy(copyList, imports) {
   var templatePath = imports.templatePath;
   var destinationPath = imports.destinationPath;
 
+
   copyList.map(function (item) {
     return fs.copy(templatePath(item.from), destinationPath(item.to));
   });
@@ -54,6 +56,7 @@ function tpl(props, tplList, tplData, imports) {
   var fs = imports.fs;
   var templatePath = imports.templatePath;
   var destinationPath = imports.destinationPath;
+
 
   tplList.filter(function (item) {
     return !(!props.travis && item.from === 'travis.yml');
@@ -66,6 +69,7 @@ function cli(tplData, imports) {
   var fs = imports.fs;
   var templatePath = imports.templatePath;
   var destinationPath = imports.destinationPath;
+
 
   fs.copyTpl(templatePath('src/cli.js'), destinationPath('src/cli.js'), tplData);
 }

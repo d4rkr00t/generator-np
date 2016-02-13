@@ -23,4 +23,4 @@ const cli = meow({
 const input = cli.input || [];
 const flags = cli.flags || {};
 
-console.log(cli.help);
+console.log(cli.help); // eslint-disable-line
