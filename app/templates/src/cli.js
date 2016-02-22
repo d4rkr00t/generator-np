@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
 import meow from 'meow';
-import chalk from 'chalk';
 import <%= camelModuleName %> from './lib/';
 
 const cli = meow({
@@ -24,3 +23,5 @@ const input = cli.input || [];
 const flags = cli.flags || {};
 
 console.log(cli.help); // eslint-disable-line
+
+<%= camelModuleName %>(input, flags);
