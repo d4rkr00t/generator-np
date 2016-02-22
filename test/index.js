@@ -8,7 +8,7 @@ const deps = ['../../app'];
 
 function run(prompt) {
   return new Promise((resolve, reject) => {
-    helpers.testDirectory(tempDir, err => {
+    helpers.testDirectory(tempDir, (err) => {
       if (err) {
         reject(err);
         return;
