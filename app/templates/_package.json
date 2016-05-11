@@ -45,7 +45,7 @@
     "chalk": "^1.1.1"
   <% } %>},
   "devDependencies": {
-    "ava": "^0.13.0",
+    "ava": "^0.14.0",
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
     "babel-eslint": "^6.0.0",
