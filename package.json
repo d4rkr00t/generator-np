@@ -86,7 +86,7 @@
     "chalk": "^1.1.1",
     "normalize-url": "^1.4.1",
     "underscore.string": "^3.3.4",
-    "yeoman-generator": "^0.22.5",
+    "yeoman-generator": "^0.23.4",
     "yosay": "^1.1.0"
   },
   "config": {
