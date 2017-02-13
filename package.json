@@ -87,7 +87,7 @@
     "normalize-url": "^1.4.1",
     "underscore.string": "^3.3.4",
     "yeoman-generator": "^0.22.5",
-    "yosay": "^1.1.0"
+    "yosay": "^2.0.0"
   },
   "config": {
     "commitizen": {
