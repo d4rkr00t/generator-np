@@ -73,7 +73,7 @@
     "chokidar-cli": "^1.2.0",
     "conventional-github-releaser": "^1.1.1",
     "coveralls": "^2.11.9",
-    "cz-conventional-changelog": "^1.1.5",
+    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^3.5.0",
     "nsp": "^2.2.1",
     "nyc": "^10.1.0",
